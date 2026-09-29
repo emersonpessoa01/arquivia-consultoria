@@ -4,18 +4,41 @@ document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.getElementById("nav-links");
   const navItems = document.querySelectorAll(".nav-links a");
 
+  function closeMenu() {
+    if (menuToggle && navLinks) {
+      menuToggle.classList.remove("active");
+      navLinks.classList.remove("active");
+    }
+  }
+
   if (menuToggle && navLinks) {
-    menuToggle.addEventListener("click", function () {
+    // Alterna a exibição do menu
+    menuToggle.addEventListener("click", function (e) {
+      e.stopPropagation();
       menuToggle.classList.toggle("active");
       navLinks.classList.toggle("active");
     });
 
     // Fecha o menu ao clicar em qualquer item da navegação
     navItems.forEach((item) => {
-      item.addEventListener("click", () => {
-        menuToggle.classList.remove("active");
-        navLinks.classList.remove("active");
-      });
+      item.addEventListener("click", closeMenu);
+    });
+
+    // Fecha o menu ao rolar a página (scroll)
+    window.addEventListener("scroll", function () {
+      if (navLinks.classList.contains("active")) {
+        closeMenu();
+      }
+    });
+
+    // Fecha o menu ao clicar fora dele
+    document.addEventListener("click", function (e) {
+      const isClickInsideNav = navLinks.contains(e.target);
+      const isClickOnToggle = menuToggle.contains(e.target);
+
+      if (!isClickInsideNav && !isClickOnToggle && navLinks.classList.contains("active")) {
+        closeMenu();
+      }
     });
   }
 
