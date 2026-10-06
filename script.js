@@ -36,7 +36,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const isClickInsideNav = navLinks.contains(e.target);
       const isClickOnToggle = menuToggle.contains(e.target);
 
-      if (!isClickInsideNav && !isClickOnToggle && navLinks.classList.contains("active")) {
+      if (
+        !isClickInsideNav &&
+        !isClickOnToggle &&
+        navLinks.classList.contains("active")
+      ) {
         closeMenu();
       }
     });
@@ -89,4 +93,25 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
+
+  // 4. Accordion do Glossário
+  document.querySelectorAll(".accordion-header").forEach((button) => {
+    button.addEventListener("click", () => {
+      const accordionItem = button.parentElement;
+      const accordionBody = accordionItem.querySelector(".accordion-body");
+      const isActive = button.classList.contains("active");
+
+      // Opcional: Fecha todos os outros itens antes de abrir o atual
+      document.querySelectorAll(".accordion-header").forEach((btn) => {
+        btn.classList.remove("active");
+        btn.nextElementSibling.style.maxHeight = null;
+      });
+
+      // Alterna o estado do item clicado
+      if (!isActive) {
+        button.classList.add("active");
+        accordionBody.style.maxHeight = accordionBody.scrollHeight + "px";
+      }
+    });
+  });
 });
