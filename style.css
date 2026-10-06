@@ -1,6 +1,8 @@
 :root {
   --primary: #003366;
+  --primary-transparent: rgba(0, 51, 102, 0.785);
   --accent: #d9534f;
+  --accent-transparent: rgba(217, 83, 79, 0.8);
   --bg-light: #f8f9fa;
   --bg-dark: #f0f4f8;
   --text: #2c3e50;
@@ -362,7 +364,7 @@ footer {
   right: 25px;
   width: 45px;
   height: 45px;
-  background-color: var(--primary);
+  background-color: var(--primary-transparent);
   color: #ffffff;
   border: none;
   border-radius: 50%;
@@ -388,7 +390,7 @@ footer {
 }
 
 .scrollTop:hover {
-  background-color: var(--accent);
+  background-color: var(--accent-transparent);
   transform: translateY(-3px);
 }
 
