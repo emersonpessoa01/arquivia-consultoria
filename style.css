@@ -16,6 +16,31 @@
   font-family: "Inter", sans-serif;
 }
 
+/* Estilização da Scrollbar (Chrome, Edge, Safari, Opera) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #001529; /* Tom escuro para combinar com o fundo do rodapé */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0077B6; /* Azul principal da marca */
+  border-radius: 5px;
+  border: 2px solid #001529; /* Efeito de margem interna */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0096C7; /* Azul um pouco mais claro ao passar o rato */
+}
+
+/* Suporte para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #0077B6 #001529;
+}
+
 html {
   scroll-behavior: smooth;
 }
