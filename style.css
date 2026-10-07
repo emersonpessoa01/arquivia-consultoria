@@ -407,6 +407,20 @@ footer {
   font-size: 0.9rem;
 }
 
+footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+footer .logo-img {
+  max-width: 200px; /* Ajusta o tamanho no rodapé */
+  height: auto;
+  /* Aumenta o brilho e o contraste para deixar o texto azul claro/visível no fundo escuro, mantendo as bolinhas alaranjadas/aquecidas */
+  filter: brightness(2.5) contrast(1.2);
+}
+
 /* BOTÃO VOLTAR AO TOPO */
 .scrollTop {
   position: fixed;
