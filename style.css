@@ -510,6 +510,6 @@ footer {
 
   .socio-cartao {
     max-width: 100%;
-    text-align: center; /* Opcional: centraliza o texto no celular */
+    /* text-align: center; Opcional: centraliza o texto no celular */
   }
 }
