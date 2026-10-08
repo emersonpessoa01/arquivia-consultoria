@@ -17,8 +17,9 @@
 }
 
 /* Estilização da Scrollbar (Chrome, Edge, Safari, Opera) */
-::-webkit-scrollbar {
-  width: 10px;
+html::-webkit-scrollbar {
+  width: 0.8rem;
+  height: 0.25px;
 }
 
 ::-webkit-scrollbar-track {
@@ -37,7 +38,7 @@
 
 /* Suporte para Firefox */
 * {
-  scrollbar-width: thin;
+  scrollbar-width: auto;
   scrollbar-color: #0077b6 #001529;
 }
 
