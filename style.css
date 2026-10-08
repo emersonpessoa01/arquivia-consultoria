@@ -26,19 +26,19 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #0077B6; /* Azul principal da marca */
+  background: #0077b6; /* Azul principal da marca */
   border-radius: 5px;
   border: 2px solid #001529; /* Efeito de margem interna */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0096C7; /* Azul um pouco mais claro ao passar o rato */
+  background: #0096c7; /* Azul um pouco mais claro ao passar o rato */
 }
 
 /* Suporte para Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #0077B6 #001529;
+  scrollbar-color: #0077b6 #001529;
 }
 
 html {
@@ -221,6 +221,25 @@ h2 {
 }
 
 /* SOCIOS */
+#sobre .container h3 {
+  display: grid;
+  position: relative;
+  max-width: 600px;
+}
+#sobre .container h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background: var(--accent);
+  width: 15%;
+  height: 3px;
+  box-sizing: border-box;
+}
+.container h3 {
+  margin-block: 30px;
+}
+
 #socios {
   /* display: flex;
   flex-wrap: wrap;
