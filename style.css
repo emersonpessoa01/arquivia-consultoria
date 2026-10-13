@@ -321,7 +321,11 @@ h2 {
 /* Centraliza o enquadramento na imagem da Rose Ane */
 #img-roseane {
   object-fit: cover;
-  object-position: center 1%; /* Ajusta o foco verticalmente para focar no rosto */
+  object-position: center 15%; /* Ajusta o foco verticalmente para focar no rosto */
+}
+#img-melry {
+  object-fit: cover;
+  object-position: center 48%; /* Ajusta o foco verticalmente para focar no rosto */
 }
 /* Atribuições */
 .socio-atribuicoes {
