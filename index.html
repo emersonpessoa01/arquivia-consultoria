@@ -69,7 +69,6 @@
       </div>
     </section>
 
-    <!-- SOBRE NÓS -->
     <section id="sobre" class="section dark-bg">
       <div class="container">
         <h2>Sobre Nós</h2>
@@ -81,82 +80,146 @@
           documentos digitais e eletrônicos, buscando garantir organização,
           acesso, segurança, preservação e recuperação das informações.
         </p>
-        <!-- <p class="intro-text">
-          Nesse contexto, a <strong>ARQUIVIA</strong> se concentra em fornecer
-          integrada, considerando todo o ciclo de vida documental. Nossa atuação
-          envolve desde a produção e organização dos documentos, passando pela
-          utilização, classificação, avaliação e destinação, até a preservação
-          dos documentos de valor permanente. No ambiente digital, trabalhamos
-          também com questões relacionadas à gestão de documentos digitais,
-          preservação digital, metadados, segurança da informação, acesso e
-          autenticidade documental.
-        </p> -->
 
-        <!-- SOCIOS -->
+        <!-- SOCIOS / EQUIPE -->
         <h3>Nossa Equipe</h3>
         <div id="socios">
+          <!-- SÓCIA 1: ROSE ANE (Em primeiro lugar) -->
           <div class="socio-cartao">
             <div class="socio-foto">
               <div class="socio-foto-wrapper">
                 <img
-                  src="https://website-mastercode.vercel.app/image/equipe3.avif"
-                  title="Foto de Juliana Costa"
-                  alt="Foto de Juliana Costa"
+                  id="img-roseane"
+                  src="./image/socia-ane.jpg"
+                  title="Foto de Rose Ane"
+                  alt="Foto de Rose Ane"
                 />
               </div>
             </div>
-            <div class="socio-nome">Juliana Costa</div>
-            <div class="socio-cargo">Diretora de Arquivos Digitais</div>
+            <label class="btn-trocar-foto">
+              📁 Alterar Foto
+              <input
+                type="file"
+                accept="image/*"
+                onchange="mudarFoto(event, 'img-roseane')"
+                style="display: none"
+              />
+            </label>
+            <div class="socio-nome">Rose Ane</div>
+            <div class="socio-cargo">Diretora de Projetos e Relacionamento</div>
+            <div class="socio-responsavel">
+              Responsável pelo planejamento e relacionamento com clientes
+            </div>
             <div class="socio-bio">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Id maxime
-              nemo voluptatem modi quos expedita similique natus odit dolore.
-              Dolorem voluptas officia vero, modi explicabo impedit iste facere.
-              Consequuntur, ipsum.
+              Coordena o planejamento e acompanhamento dos projetos, comunicação
+              institucional e propostas comerciais.
+            </div>
+            <div class="socio-atribuicoes">
+              <span class="atribuicoes-titulo"
+                >Principais responsabilidades:</span
+              >
+              <ul>
+                <li>Elaborar planos de trabalho e cronogramas.</li>
+                <li>Definir objetivos, etapas e entregas de projetos.</li>
+                <li>Preparar propostas de consultoria.</li>
+                <li>Coordenar o relacionamento com clientes e parceiros.</li>
+              </ul>
             </div>
           </div>
 
+          <!-- SÓCIA 2: FABRÍCIA -->
           <div class="socio-cartao">
             <div class="socio-foto">
               <div class="socio-foto-wrapper">
                 <img
-                  src="https://website-mastercode.vercel.app/image/equipe1.jfif"
-                  title="Foto de Ana Silva"
-                  alt="Foto de Ana Silva"
+                  id="img-fabricia"
+                  src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236c757d'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>"
+                  title="Foto de Fabrícia"
+                  alt="Foto de Fabrícia"
                 />
               </div>
             </div>
-            <div class="socio-nome">Ana Silva</div>
-            <div class="socio-cargo">Diretora de Arquivos Analógicos</div>
+            <label class="btn-trocar-foto">
+              📁 Alterar Foto
+              <input
+                type="file"
+                accept="image/*"
+                onchange="mudarFoto(event, 'img-fabricia')"
+                style="display: none"
+              />
+            </label>
+            <div class="socio-nome">Fabrícia</div>
+            <div class="socio-cargo">Diretora de Gestão Documental</div>
+            <div class="socio-responsavel">
+              Responsável pela organização e tratamento arquivístico
+            </div>
             <div class="socio-bio">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure,
-              consectetur doloremque! Reiciendis nobis fugiat cumque a
-              excepturi, numquam neque. Cum, omnis nemo! Veniam id iure
-              blanditiis ducimus quibusdam unde mollitia?
+              Coordena as atividades de documentos convencionais, acompanhando o
+              ciclo de vida documental, diagnósticos e conservação preventiva.
+            </div>
+            <div class="socio-atribuicoes">
+              <span class="atribuicoes-titulo"
+                >Principais responsabilidades:</span
+              >
+              <ul>
+                <li>Realizar diagnósticos arquivísticos.</li>
+                <li>
+                  Elaborar planos de classificação e tabelas de temporalidade.
+                </li>
+                <li>
+                  Coordenar arquivos correntes, intermediários e permanentes.
+                </li>
+                <li>Orientar a conservação preventiva dos documentos.</li>
+              </ul>
             </div>
           </div>
 
+          <!-- SÓCIA 3: MELRI -->
           <div class="socio-cartao">
             <div class="socio-foto">
               <div class="socio-foto-wrapper">
                 <img
-                  src="https://website-mastercode.vercel.app/image/equipe2.jfif"
-                  title="Foto de Charlley Luz"
-                  alt="Foto de Charlley Luz"
+                  id="img-melri"
+                  src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236c757d'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>"
+                  title="Foto de Melri"
+                  alt="Foto de Melri"
                 />
               </div>
             </div>
-            <div class="socio-nome">Carlos Mendes</div>
-            <div class="socio-cargo">Tech Lead de Arquivos Digitais</div>
+            <label class="btn-trocar-foto">
+              📁 Alterar Foto
+              <input
+                type="file"
+                accept="image/*"
+                onchange="mudarFoto(event, 'img-melri')"
+                style="display: none"
+              />
+            </label>
+            <div class="socio-nome">Melri</div>
+            <div class="socio-cargo">Diretora de Gestão Digital e Inovação</div>
+            <div class="socio-responsavel">
+              Responsável pelas soluções tecnológicas aplicadas aos arquivos
+            </div>
             <div class="socio-bio">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
-              recusandae odio, esse aspernatur explicabo culpa suscipit cum
-              nostrum quisquam est rem? Sequi nostrum officia accusantium error
-              totam nam delectus deleniti.
+              Coordena projetos de documentos digitais, integrando Arquivologia
+              e TI para garantir segurança e preservação digital.
+            </div>
+            <div class="socio-atribuicoes">
+              <span class="atribuicoes-titulo"
+                >Principais responsabilidades:</span
+              >
+              <ul>
+                <li>Planejar ações de gestão de documentos digitais.</li>
+                <li>Trabalhar com metadados e recuperação da informação.</li>
+                <li>Propor estratégias de preservação digital.</li>
+                <li>Orientar controle de acesso e proteção documental.</li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Missão, Visão e Valores -->
       <div class="grid-3 container">
         <div class="card">
           <h3>Missão</h3>
@@ -178,9 +241,8 @@
           <h3>Valores</h3>
           <p>
             Ética profissional, Responsabilidade arquivística, Acesso à
-            informação, Preservação da memória, Segurança documental, Inovação ,
-            Transparência, Sustentabilidade, Compromisso com a legislação e
-            Valorização do patrimônio documental.
+            informação, Preservação da memória, Segurança documental, Inovação,
+            Transparência, Sustentabilidade e Compromisso com a legislação.
           </p>
         </div>
       </div>

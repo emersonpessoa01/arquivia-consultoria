@@ -12,26 +12,22 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   if (menuToggle && navLinks) {
-    // Alterna a exibição do menu
     menuToggle.addEventListener("click", function (e) {
       e.stopPropagation();
       menuToggle.classList.toggle("active");
       navLinks.classList.toggle("active");
     });
 
-    // Fecha o menu ao clicar em qualquer item da navegação
     navItems.forEach((item) => {
       item.addEventListener("click", closeMenu);
     });
 
-    // Fecha o menu ao rolar a página (scroll)
     window.addEventListener("scroll", function () {
       if (navLinks.classList.contains("active")) {
         closeMenu();
       }
     });
 
-    // Fecha o menu ao clicar fora dele
     document.addEventListener("click", function (e) {
       const isClickInsideNav = navLinks.contains(e.target);
       const isClickOnToggle = menuToggle.contains(e.target);
@@ -47,19 +43,20 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // 2. Accordion do Glossário
-  const accordionHeaders = document.querySelectorAll(".accordion-header");
+  document.querySelectorAll(".accordion-header").forEach((button) => {
+    button.addEventListener("click", () => {
+      const accordionItem = button.parentElement;
+      const accordionBody = accordionItem.querySelector(".accordion-body");
+      const isActive = button.classList.contains("active");
 
-  accordionHeaders.forEach((header) => {
-    header.addEventListener("click", function () {
-      const body = this.nextElementSibling;
+      document.querySelectorAll(".accordion-header").forEach((btn) => {
+        btn.classList.remove("active");
+        btn.nextElementSibling.style.maxHeight = null;
+      });
 
-      if (body.style.display === "block") {
-        body.style.display = "none";
-      } else {
-        document
-          .querySelectorAll(".accordion-body")
-          .forEach((el) => (el.style.display = "none"));
-        body.style.display = "block";
+      if (!isActive) {
+        button.classList.add("active");
+        accordionBody.style.maxHeight = accordionBody.scrollHeight + "px";
       }
     });
   });
@@ -74,9 +71,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Lógica do Botão Voltar ao Topo
+  // 4. Botão Voltar ao Topo
   const btnTop = document.querySelector(".scrollTop");
-
   if (btnTop) {
     window.addEventListener("scroll", function () {
       if (window.scrollY > 300) {
@@ -94,24 +90,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // 4. Accordion do Glossário
-  document.querySelectorAll(".accordion-header").forEach((button) => {
-    button.addEventListener("click", () => {
-      const accordionItem = button.parentElement;
-      const accordionBody = accordionItem.querySelector(".accordion-body");
-      const isActive = button.classList.contains("active");
-
-      // Opcional: Fecha todos os outros itens antes de abrir o atual
-      document.querySelectorAll(".accordion-header").forEach((btn) => {
-        btn.classList.remove("active");
-        btn.nextElementSibling.style.maxHeight = null;
-      });
-
-      // Alterna o estado do item clicado
-      if (!isActive) {
-        button.classList.add("active");
-        accordionBody.style.maxHeight = accordionBody.scrollHeight + "px";
+  // 5. Carrega as fotos salvas no localStorage ao abrir a página
+  ["img-roseane", "img-fabricia", "img-melri"].forEach((id) => {
+    const salva = localStorage.getItem(id);
+    if (salva) {
+      const imgElement = document.getElementById(id);
+      if (imgElement) {
+        imgElement.src = salva;
       }
-    });
+    }
   });
 });
+
+// FUNÇÃO GLOBAL (deve ficar FORA do DOMContentLoaded)
+function mudarFoto(event, imgId) {
+  const arquivo = event.target.files[0];
+  if (arquivo) {
+    const leitor = new FileReader();
+    leitor.onload = function (e) {
+      const imgElement = document.getElementById(imgId);
+      if (imgElement) {
+        imgElement.src = e.target.result;
+      }
+      localStorage.setItem(imgId, e.target.result);
+    };
+    leitor.readAsDataURL(arquivo);
+  }
+}

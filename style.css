@@ -277,6 +277,12 @@ h2 {
   color: var(--accent);
   margin-bottom: 0.5rem;
 }
+.socio-responsavel {
+  font-size: 0.9rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
 
 .socio-bio {
   line-height: 1.5;
@@ -311,6 +317,41 @@ h2 {
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease-in-out;
+}
+/* Centraliza o enquadramento na imagem da Rose Ane */
+#img-roseane {
+  object-fit: cover;
+  object-position: center 1%; /* Ajusta o foco verticalmente para focar no rosto */
+}
+/* Atribuições */
+.socio-atribuicoes {
+  margin-top: 1rem;
+  text-align: left;
+  width: 100%;
+  font-size: 0.85rem;
+  background: rgba(0, 0, 0, 0.02);
+  padding: 0.75rem;
+  border-radius: 6px;
+  border-left: 3px solid var(--primary);
+}
+
+.atribuicoes-titulo {
+  font-weight: 600;
+  color: var(--primary);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.socio-atribuicoes ul {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.socio-atribuicoes li {
+  margin-bottom: 0.2rem;
+  line-height: 1.4;
 }
 
 /* Aplica o zoom na imagem ao passar o rato no container principal */
